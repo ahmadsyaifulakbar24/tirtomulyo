@@ -1,4 +1,5 @@
 import { Box, Container, Grid, makeStyles, Typography } from "@material-ui/core";
+import { green } from "@material-ui/core/colors";
 import React from "react";
 
 const useStyles = makeStyles((theme) => ({
@@ -39,7 +40,7 @@ function Content(props) {
     return (
         <div className={classes.root}>
             <Box
-                bgcolor="#e8e8ff"
+                bgcolor={green[50]}
                 py={7}
             >       
                 <Container> 

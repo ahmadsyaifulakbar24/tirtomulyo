@@ -1,4 +1,13 @@
-import { Box, Button, Card, CardActions, CardContent, Divider, Grid, makeStyles, Typography } from '@material-ui/core'
+import { 
+    Box, 
+    Button, 
+    Card, 
+    CardActions, 
+    CardContent, 
+    Divider, 
+    makeStyles, 
+    Typography 
+} from '@material-ui/core'
 import React from 'react'
 
 const useStyles = makeStyles((theme) => ({
@@ -14,9 +23,6 @@ const useStyles = makeStyles((theme) => ({
     subPrice: {
         fontSize: 17,
     },
-    button : {
-        margin: theme.spacing(3, 0, 4, 0)
-    }
 })) 
 
 function PackageComponent(props) {
@@ -52,15 +58,9 @@ function PackageComponent(props) {
                 </Box>
             </CardContent>
             <CardActions>
-                <Grid 
-                    className={classes.button}
-                    container 
-                    justifyContent="center"
-                >
-                    <Button variant="contained" color="primary" size="large">
-                        Pesan
-                    </Button>
-                </Grid>
+                <Button fullWidth variant="contained" color="primary" size="large">
+                    Pesan
+                </Button>
             </CardActions>
         </Card>
     )

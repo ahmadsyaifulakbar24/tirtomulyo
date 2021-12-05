@@ -8,6 +8,7 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import ItemData from './ItemData';
 import { Box, Button, Container, Grid, Typography, useMediaQuery } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
+import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -43,7 +44,7 @@ function Gallery() {
     const rowsImage = matches ? 1 : 2
     return (
         <Box
-            bgcolor="#e8e8ff"
+            bgcolor={green[50]}
             py={3}
         >
             <Container>
@@ -77,7 +78,12 @@ function Gallery() {
                     </ImageList>
                 </div>
                 <Grid container justifyContent="center" style={{ paddingTop: 30 }}>
-                    <Button variant="contained" color="primary" size="large">
+                    <Button 
+                        variant="contained" 
+                        color="primary" 
+                        size="large"
+                        href="/gallery"
+                    >
                         Lihat Lebih Banyak
                     </Button>
                 </Grid>

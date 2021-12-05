@@ -6,6 +6,9 @@ import {
     Route  
 } from "react-router-dom";
 import Layout from '../components/Layout';
+import Eduwisata from '../views/Eduwisata';
+import About from '../views/About';
+import EduwisataDetail from '../views/Eduwisata/EduwisataDetail';
 import Gallery from '../views/Gallery';
 import Home from '../views/Home';
 
@@ -29,6 +32,9 @@ export default function Router() {
                     <Routes>
                         <Route path="/" element={<Home />}/>
                         <Route path="/gallery" element={<Gallery />}/>
+                        <Route path="/eduwisata" element={<Eduwisata />}/>
+                        <Route path="/eduwisata/:slug" element={<EduwisataDetail />}/>
+                        <Route path="/about" element={<About />}/>
                     </Routes>
                 </Layout>
             </BrowserRouter>

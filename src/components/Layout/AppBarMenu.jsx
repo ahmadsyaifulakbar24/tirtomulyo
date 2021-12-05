@@ -20,6 +20,7 @@ import React, { Fragment, useState } from "react";
 import MenuIcon from '@material-ui/icons/Menu';
 import { useLocation, useNavigate } from "react-router-dom";
 import MenuItems from "./MenuItems";
+import { green } from "@material-ui/core/colors";
 
 const drawerWidth = 240;
 const useStyle = makeStyles((theme) => ({
@@ -27,7 +28,7 @@ const useStyle = makeStyles((theme) => ({
         flexGrow: 1,
     },
     logo : {
-        // color: "#fff",
+        color: "#fff",
         cursor: 'pointer',
         flexGrow: 1
     },
@@ -47,7 +48,7 @@ const useStyle = makeStyles((theme) => ({
         },
     },
     button: {
-        // color: "white",
+        color: "white",
         textTransform: "none",
         padding: theme.spacing(0, 4, 0, 4)
     },
@@ -55,11 +56,11 @@ const useStyle = makeStyles((theme) => ({
         width: drawerWidth
     },
     active : {
-        color: "#3f51b5",
+        color: green[900],
     },
     activeBackground: {
         color: "#fff",
-        background: "#303f9f"
+        background: green[900]
     }
 }))
 

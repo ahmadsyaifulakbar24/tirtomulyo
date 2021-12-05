@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import { Box, Container, useMediaQuery } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
+import Banner2 from '../../components/banner2';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -81,39 +82,43 @@ function Gallery() {
     const matches = useMediaQuery(theme.breakpoints.down('sm'));
     const rowsImage = matches ? 1 : 2
     return (
-        <Box
-            className={classes.root}
-            py={3}
-        >
-            <Container>
-                <div className={classes.groupGallery}>
-                    <ImageList rowHeight={200} gap={1} className={classes.imageList} cols={3}>
-                        {ItemData.map((item) => (
-                            <ImageListItem key={item.img} cols={matches ? item.colsMobile : item.cols} rows={rowsImage}>
-                            {/* <ImageListItem key={item.img} cols={item.featured ? 2 : 1} rows={item.featured ? 2 : 1}> */}
-                                <img src={item.img} alt={item.title} />
-                                <ImageListItemBar
-                                    title={item.title}
-                                    position="top"
-                                    actionIcon={
-                                    <IconButton aria-label={`star ${item.title}`} className={classes.icon}>
-                                        <StarBorderIcon />
-                                    </IconButton>
-                                    }
-                                    actionPosition="left"
-                                    className={classes.titleBar}
-                                />
-                            </ImageListItem>
-                        ))}
-                    </ImageList>
-                </div>
-                {/* <Grid container justifyContent="center" style={{ paddingTop: 30 }}>
-                    <Button variant="contained" color="primary" size="large">
-                        Lihat Lebih Banyak
-                    </Button>
-                </Grid> */}
-            </Container>
-        </Box>
+        <Fragment>
+            <Banner2 
+                title="Gallery"
+            />
+            <Box
+                className={classes.root}
+            >
+                <Container>
+                    <div className={classes.groupGallery}>
+                        <ImageList rowHeight={200} gap={1} className={classes.imageList} cols={3}>
+                            {ItemData.map((item) => (
+                                <ImageListItem key={item.img} cols={matches ? item.colsMobile : item.cols} rows={rowsImage}>
+                                {/* <ImageListItem key={item.img} cols={item.featured ? 2 : 1} rows={item.featured ? 2 : 1}> */}
+                                    <img src={item.img} alt={item.title} />
+                                    <ImageListItemBar
+                                        title={item.title}
+                                        position="top"
+                                        actionIcon={
+                                        <IconButton aria-label={`star ${item.title}`} className={classes.icon}>
+                                            <StarBorderIcon />
+                                        </IconButton>
+                                        }
+                                        actionPosition="left"
+                                        className={classes.titleBar}
+                                    />
+                                </ImageListItem>
+                            ))}
+                        </ImageList>
+                    </div>
+                    {/* <Grid container justifyContent="center" style={{ paddingTop: 30 }}>
+                        <Button variant="contained" color="primary" size="large">
+                            Lihat Lebih Banyak
+                        </Button>
+                    </Grid> */}
+                </Container>
+            </Box>
+        </Fragment>
     )
 }
 
