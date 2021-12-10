@@ -1,3 +1,3 @@
-const image_url = './assets/images/'
+const image_url = '/tirtomulyo/assets/images/'
 
 export { image_url }

@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { image_url } from '../../variable/BaseUrl';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: {
@@ -18,6 +19,7 @@ const useStyles = makeStyles({
 
 function EduwisataCard() {
     const classes = useStyles();
+    const navigate = useNavigate()
 
     return (
         <Card className={classes.root}>
@@ -39,7 +41,7 @@ function EduwisataCard() {
                 <Button 
                     size="small" 
                     color="primary" 
-                    href="/eduwisata/detail-eduwisata"
+                    onClick={() => navigate('/eduwisata/detail-eduwisata')}
                 >
                     Baca Selengkapnya
                 </Button>

@@ -47,6 +47,14 @@ function EduwisataDetail() {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
                 </Typography>
             </Container>
 

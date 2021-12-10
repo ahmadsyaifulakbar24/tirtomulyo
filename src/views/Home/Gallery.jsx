@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import ItemData from './ItemData';
 import { Box, Button, Container, Grid, Typography, useMediaQuery } from '@material-ui/core';
+import { useNavigate } from 'react-router-dom';
 import { useTheme } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 
@@ -42,6 +43,7 @@ function Gallery() {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('sm'));
     const rowsImage = matches ? 1 : 2
+    const navigate = useNavigate()
     return (
         <Box
             bgcolor={green[50]}
@@ -78,11 +80,20 @@ function Gallery() {
                     </ImageList>
                 </div>
                 <Grid container justifyContent="center" style={{ paddingTop: 30 }}>
-                    <Button 
+                    {/* <Link to="/gallery">
+                        <Button 
+                            variant="contained" 
+                            color="primary" 
+                            size="large"
+                        >
+                            Lihat Lebih Banyak
+                        </Button>
+                    </Link> */}
+                     <Button 
                         variant="contained" 
                         color="primary" 
                         size="large"
-                        href="/gallery"
+                        onClick={() => navigate('/gallery')}
                     >
                         Lihat Lebih Banyak
                     </Button>
