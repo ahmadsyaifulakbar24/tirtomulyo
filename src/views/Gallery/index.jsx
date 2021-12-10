@@ -8,6 +8,7 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import { Box, Container, useMediaQuery } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import Banner2 from '../../components/banner2';
+import { image_url } from '../../variable/BaseUrl';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -40,35 +41,35 @@ const useStyles = makeStyles((theme) => ({
 
 const ItemData = [
     {
-      img: './assets/images/banner.jpg',
+      img: `${image_url}banner.jpg`,
       title: 'Image',
       author: 'author',
       cols: 1.5,
       colsMobile: 1.5
     },
     {
-      img: './assets/images/banner.jpg',
+      img: `${image_url}banner.jpg`,
       title: 'Image',
       author: 'author',
       cols: 1.5,
       colsMobile: 1.5
     },
     {
-      img: './assets/images/banner.jpg',
+      img: `${image_url}banner.jpg`,
       title: 'Image',
       author: 'author',
       cols: 1,
       colsMobile: 3
     },
     {
-        img: './assets/images/banner.jpg',
+        img: `${image_url}banner.jpg`,
         title: 'Image',
         author: 'author',
         cols: 1,
         colsMobile: 1.5
     },
     {
-        img: './assets/images/banner.jpg',
+        img: `${image_url}banner.jpg`,
         title: 'Image',
         author: 'author',
         cols: 1,

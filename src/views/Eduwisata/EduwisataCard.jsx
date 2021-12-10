@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { image_url } from '../../variable/BaseUrl';
 
 const useStyles = makeStyles({
     root: {
@@ -25,7 +26,7 @@ function EduwisataCard() {
                     component="img"
                     alt="Contemplative Reptile"
                     height="215"
-                    image="/assets/images/banner.jpg"
+                    image={`${image_url}banner.jpg`}
                     title="Contemplative Reptile"
                 />
                 <CardContent>

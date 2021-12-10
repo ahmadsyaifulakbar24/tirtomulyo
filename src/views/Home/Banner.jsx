@@ -1,9 +1,10 @@
 import { Box, Container, makeStyles, Typography } from '@material-ui/core'
 import React, { Fragment } from 'react'
+import { image_url } from '../../variable/BaseUrl'
 
 const useStyle = makeStyles((theme) => ({
     root : {
-        backgroundImage: 'url("/assets/images/banner.jpg")',
+        backgroundImage: `url(${image_url}banner.jpg)`,
         height: '100vh',
         width: '100%',
         backgroundSize: 'cover',
@@ -42,7 +43,7 @@ function Banner() {
                     <Box className={classes.contentCenter}>
                         <img 
                             className={classes.logo}
-                            src="/assets/images/kendal.png" 
+                            src={`${image_url}kendal.png`} 
                             alt="logo-kendal" 
                         />
                         <Typography

@@ -1,6 +1,7 @@
 import { Box, Container, Grid, makeStyles, Typography } from "@material-ui/core";
 import { green } from "@material-ui/core/colors";
 import React from "react";
+import { image_url } from "../../variable/BaseUrl";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -52,7 +53,7 @@ function Content(props) {
                         <Grid item lg={5} xs={12}>
                             <img 
                                 className={classes.image}
-                                src="/assets/images/content1.jpg"
+                                src={`${image_url}content1.jpg`}
                                 alt="" 
                             />
                         </Grid>
@@ -116,7 +117,7 @@ function Content(props) {
                         <Grid item lg={5} xs={12}>
                             <img 
                                 className={classes.image}
-                                src="/assets/images/content2.jpg"
+                                src={`${image_url}content2.jpg`}
                                 alt="" 
                             />
                         </Grid>

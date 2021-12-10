@@ -5,10 +5,11 @@ import {
     Typography
 } from '@material-ui/core'
 import React, { Fragment } from 'react'
+import { image_url } from '../../variable/BaseUrl'
 
 const useStyle = makeStyles((theme) => ({
     root : {
-        backgroundImage: 'url("/assets/images/banner.jpg")',
+        backgroundImage: `url(${image_url}banner.jpg)`,
         height: '30vh',
         width: '100%',
         backgroundSize: 'cover',

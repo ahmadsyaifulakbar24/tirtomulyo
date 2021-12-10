@@ -1,6 +1,7 @@
 import { Container, makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
 import Banner2 from '../../components/banner2'
+import { image_url } from '../../variable/BaseUrl'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -32,7 +33,7 @@ function EduwisataDetail() {
                 </Typography>
                 <img 
                     className={classes.image}
-                    src="/assets/images/banner.jpg"
+                    src={`${image_url}banner.jpg`}
                     alt="title"
                 />
                 <Typography
