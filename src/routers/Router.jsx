@@ -27,7 +27,7 @@ const theme = createTheme({
 export default function Router() {
     return (
         <ThemeProvider theme={theme}>
-            <BrowserRouter basename="tirtomulyo">
+            <BrowserRouter basename="/tirtomulyo">
                 <Layout>
                     <Routes>
                         <Route path="/" element={<Home />}/>
