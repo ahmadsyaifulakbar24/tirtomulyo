@@ -7,7 +7,6 @@ import { image_url } from '../../variable/BaseUrl';
 const useStyle = makeStyles((theme) => ({
     titleContent: {
         fontWeight: 900,
-        // textAlign: 'center',
         marginBottom: theme.spacing(3)
     },
     cardTitle: {

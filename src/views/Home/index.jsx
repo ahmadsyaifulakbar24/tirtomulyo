@@ -4,6 +4,7 @@ import Banner from './Banner'
 import Comment from './Comment'
 import Content from './Content'
 import Gallery from './Gallery'
+import Invitation from './Invitation'
 import Packages from './Packages'
 
 function Home() {
@@ -15,6 +16,7 @@ function Home() {
             <Content />
             <Gallery />
             <Comment />
+            <Invitation />
         </Fragment>
     )
 }

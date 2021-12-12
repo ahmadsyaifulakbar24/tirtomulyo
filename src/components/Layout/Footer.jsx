@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        marginTop: theme.spacing(10)
+        marginTop: theme.spacing(5)
     },
     navLink: {
         display: "flex",
