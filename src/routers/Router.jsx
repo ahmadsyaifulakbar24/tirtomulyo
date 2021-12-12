@@ -11,6 +11,7 @@ import About from '../views/About';
 import EduwisataDetail from '../views/Eduwisata/EduwisataDetail';
 import Gallery from '../views/Gallery';
 import Home from '../views/Home';
+import TravelGuide from '../views/TravelGuide';
 
 const theme = createTheme({
     palette: {
@@ -35,6 +36,7 @@ export default function Router() {
                         <Route path="/eduwisata" element={<Eduwisata />}/>
                         <Route path="/eduwisata/:slug" element={<EduwisataDetail />}/>
                         <Route path="/about" element={<About />}/>
+                        <Route path="/travel-guide" element={<TravelGuide />}/>
                     </Routes>
                 </Layout>
             </BrowserRouter>
