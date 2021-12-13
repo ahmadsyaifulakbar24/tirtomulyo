@@ -1,7 +1,12 @@
 import { Container, makeStyles, Typography } from '@material-ui/core'
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import Banner2 from '../../components/banner2'
-import { image_url } from '../../variable/BaseUrl'
+import { useParams } from "react-router-dom";
+import { api_url, image_url } from '../../variable/BaseUrl'
+import SliderContent from './SliderContent';
+import './EduwisataDetail.css'
+import EduwisataContent from './EduwisataContent';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -18,46 +23,45 @@ const useStyles = makeStyles((theme) => ({
         marginTop: 15,
     }
 }))
+
 function EduwisataDetail() {
     const classes = useStyles()
+    const { slug } = useParams()
+    const [data, setData] = useState({})
+    const contentDetailFromAPI = async() => {
+        await axios.get(api_url + 'content/' + slug)
+        .then((res) => {
+            setData(res.data)
+        })
+    }
+
+    useEffect(() => {
+        contentDetailFromAPI()
+    }, [])
+
+    const gallery = {
+        image1 : data.gallery_image_1,
+        image2 : data.gallery_image_2,
+        image3 : data.gallery_image_3
+    }
     return (
-        <div>
-            <Banner2 />
-            <Container className={classes.root}>
-                <Typography
-                    className={classes.title}
-                    variant="h3"
-                    component="h2"
-                >
-                    Ini title Blog
-                </Typography>
-                <img 
-                    className={classes.image}
-                    src={`${image_url}banner.jpg`}
-                    alt="title"
-                />
-                <Typography
-                    className={classes.description}
-                    color="textSecondary"
-                >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cum sit ad debitis ab eius accusantium fuga atque quos voluptatibus adipisci aliquam maiores, earum reiciendis explicabo qui cumque ullam dignissimos?
-                </Typography>
-            </Container>
-
+        <div style={{ backgroundColor: "#F8f0C6" }}>
+            <Banner2 
+                img={data.header_image}
+            />
+            <img 
+                style={{ marginTop: '-100px' }}
+                className="header-image" 
+                src={`${image_url}HeaderKonten.png`} alt="" 
+            />
+            <SliderContent
+                gallery={ gallery }
+                title={data.title}
+            />
+            <EduwisataContent
+                content={data.content}
+                funFact={data.fun_fact}
+            />
         </div>
     )
 }

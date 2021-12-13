@@ -9,7 +9,6 @@ import { image_url } from '../../variable/BaseUrl'
 
 const useStyle = makeStyles((theme) => ({
     root : {
-        backgroundImage: `url(${image_url}banner.jpg)`,
         height: '30vh',
         width: '100%',
         backgroundSize: 'cover',
@@ -43,10 +42,15 @@ const useStyle = makeStyles((theme) => ({
 
 function Banner2(props) {
     const classes = useStyle()
-
+    console.log(props.img)
     return (
         <Fragment>
-            <Box className={classes.root}>
+            <Box 
+                className={classes.root}
+                sx={{ 
+                    backgroundImage: props.img !== undefined ? `url(${props.img})` : `url(${image_url}banner.jpg)`,
+                }}
+            >
                 <Box className={classes.contentCenter}>     
                     <Container>
                         <Typography
