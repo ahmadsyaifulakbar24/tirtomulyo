@@ -98,12 +98,13 @@ const AppBarMenu = () => {
 
     const appBar = (
         <Fragment>
-            {MenuItems.map((item, inrdex) => (
+            {MenuItems.map((item, index) => (
                 <Button
                     className = {`${classes.button} ${location.pathname === item.url ? appBarBackground ? classes.activeBackground : classes.active : null}`}
                     color="inherit"
                     variant={appBarBackground && location.pathname === item.url ? 'contained' : 'text'}
                     onClick={() => navigate(item.url)}
+                    key={index}
                 >
                     <ListItemText>
                         {item.name}

@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     },
 })
 
-function EduwisataCard() {
+function EduwisataCard(props) {
     const classes = useStyles();
     const navigate = useNavigate()
 
@@ -28,12 +28,12 @@ function EduwisataCard() {
                     component="img"
                     alt="Contemplative Reptile"
                     height="215"
-                    image={`${image_url}banner.jpg`}
-                    title="Contemplative Reptile"
+                    image={props.data.header_image}
+                    title={ props.data.title }
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        Lizard
+                        {props.data.title}
                     </Typography>
                 </CardContent>
             </CardActionArea>
@@ -41,7 +41,7 @@ function EduwisataCard() {
                 <Button 
                     size="small" 
                     color="primary" 
-                    onClick={() => navigate('/eduwisata/detail-eduwisata')}
+                    onClick={() => navigate(`/eduwisata/${props.data.slug}`)}
                 >
                     Baca Selengkapnya
                 </Button>

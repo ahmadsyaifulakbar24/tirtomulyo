@@ -86,6 +86,7 @@ const Footer = () => {
                     className={classes.button}
                     size="small"
                     onClick = {() => navigate(item.url)}
+                    key={index}
                 >
                     {item.name}
                 </Button>
@@ -123,7 +124,7 @@ const Footer = () => {
                         width="100%" 
                         height="450" 
                         style={{ border: 0 }} 
-                        allowfullscreen="" 
+                        allowFullScreen="" 
                         loading="lazy"
                     >
                     </iframe>
@@ -136,7 +137,7 @@ const Footer = () => {
                         width="100%" 
                         height="450" 
                         style={{ border: 0 }} 
-                        allowfullscreen="" 
+                        allowFullScreen="" 
                         loading="lazy"
                     >    
                     </iframe>
@@ -149,7 +150,7 @@ const Footer = () => {
                         width="100%" 
                         height="450" 
                         style={{ border: 0 }} 
-                        allowfullscreen="" 
+                        allowFullScreen="" 
                         loading="lazy"
                     >
                     </iframe>
@@ -162,7 +163,7 @@ const Footer = () => {
                         width="100%" 
                         height="450" 
                         style={{ border: 0 }} 
-                        allowfullscreen="" 
+                        allowFullScreen="" 
                         loading="lazy"
                     >
                     </iframe>
@@ -175,7 +176,7 @@ const Footer = () => {
                         width="100%" 
                         height="450" 
                         style={{ border: 0 }} 
-                        allowfullscreen="" 
+                        allowFullScreen="" 
                         loading="lazy"
                     >
                     </iframe>

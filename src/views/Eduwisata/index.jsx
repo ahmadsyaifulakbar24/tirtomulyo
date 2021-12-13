@@ -1,7 +1,9 @@
-import { Container, Grid } from '@material-ui/core'
+import { Container, Grid, useEventCallback } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import Banner2 from '../../components/banner2'
+import { api_url } from '../../variable/BaseUrl'
 import EduwisataCard from './EduwisataCard'
 
 const useStyle = makeStyles((theme) => ({
@@ -13,26 +15,18 @@ const useStyle = makeStyles((theme) => ({
 
 function Eduwisata() {
     const classes = useStyle()
-    const [data, setdata] = useState([
-        {
-            data:1,
-        },
-        {
-            data:1,
-        },
-        {
-            data:1,
-        },
-        {
-            data:1,
-        },
-        {
-            data:1,
-        },
-        {
-            data:1,
-        }
-    ])
+    const [data, setData] = useState([])
+
+    const getContentFromAPI = async () => {
+        await axios.get(api_url + 'content')
+        .then((res) => {
+            setData(res.data)
+        })
+    }
+
+    useEffect(() => {
+        getContentFromAPI()
+    }, [])
 
     return (
         <div>
@@ -51,8 +45,11 @@ function Eduwisata() {
                                 lg={4}
                                 sm={6}
                                 xs={12}
+                                key={index}
                             >
-                                <EduwisataCard />
+                                <EduwisataCard 
+                                    data={item}
+                                />
                             </Grid>
                         ))
                     }

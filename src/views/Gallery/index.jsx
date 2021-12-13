@@ -1,14 +1,14 @@
-import React, { Fragment } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { Fragment, useEffect, useState } from 'react';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import { Box, Container, useMediaQuery } from '@material-ui/core';
-import { useTheme } from '@material-ui/core/styles';
 import Banner2 from '../../components/banner2';
-import { image_url } from '../../variable/BaseUrl';
+import { api_url, image_url } from '../../variable/BaseUrl';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -39,49 +39,46 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const ItemData = [
-    {
-      img: `${image_url}banner.jpg`,
-      title: 'Image',
-      author: 'author',
-      cols: 1.5,
-      colsMobile: 1.5
-    },
-    {
-      img: `${image_url}banner.jpg`,
-      title: 'Image',
-      author: 'author',
-      cols: 1.5,
-      colsMobile: 1.5
-    },
-    {
-      img: `${image_url}banner.jpg`,
-      title: 'Image',
-      author: 'author',
-      cols: 1,
-      colsMobile: 3
-    },
-    {
-        img: `${image_url}banner.jpg`,
-        title: 'Image',
-        author: 'author',
-        cols: 1,
-        colsMobile: 1.5
-    },
-    {
-        img: `${image_url}banner.jpg`,
-        title: 'Image',
-        author: 'author',
-        cols: 1,
-        colsMobile: 1.5
-    },
-]
-
 function Gallery() {
     const classes = useStyles();
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('sm'));
     const rowsImage = matches ? 1 : 2
+    const [gallery, setGallery] = useState([])
+
+    const getGalleyFromAPI = async () => {
+        await axios.get(api_url + 'gallery')
+        .then((res) => {
+            res.data.map((item, index) => {
+                let hasil =  ((index + 1) + 5) % 5;
+                let setCols;
+                let setColsMobile;
+                if(hasil === 1 || hasil === 2) {
+                    setCols = 1.5
+                    setColsMobile = 1.5
+                } else if(hasil === 3) {
+                        setCols = 1
+                        setColsMobile = 3
+                } else {
+                        setCols = 1
+                        setColsMobile = 1.5
+                }
+                setGallery((gallery) => [
+                    ...gallery, {
+                        img: item.image,
+                        title: item.file_name,
+                        cols: setCols,
+                        colsMobile: setColsMobile,
+                    }
+                ])
+            })
+        })
+    }
+
+    useEffect(() => {
+        getGalleyFromAPI()   
+    }, [])
+
     return (
         <Fragment>
             <Banner2 
@@ -93,9 +90,12 @@ function Gallery() {
                 <Container>
                     <div className={classes.groupGallery}>
                         <ImageList rowHeight={200} gap={1} className={classes.imageList} cols={3}>
-                            {ItemData.map((item) => (
-                                <ImageListItem key={item.img} cols={matches ? item.colsMobile : item.cols} rows={rowsImage}>
-                                {/* <ImageListItem key={item.img} cols={item.featured ? 2 : 1} rows={item.featured ? 2 : 1}> */}
+                            {gallery.map((item, index) => (
+                                <ImageListItem 
+                                    key={index} 
+                                    cols={matches ? item.colsMobile : item.cols} 
+                                    rows={rowsImage}
+                                >
                                     <img src={item.img} alt={item.title} />
                                     <ImageListItemBar
                                         title={item.title}

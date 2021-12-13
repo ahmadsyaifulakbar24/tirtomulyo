@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
-import ItemData from './ItemData';
 import { Box, Button, Container, Grid, Typography, useMediaQuery } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
+import axios from 'axios';
+import { api_url } from '../../variable/BaseUrl';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -44,6 +45,42 @@ function Gallery() {
     const matches = useMediaQuery(theme.breakpoints.down('sm'));
     const rowsImage = matches ? 1 : 2
     const navigate = useNavigate()
+    const [gallery, setGallery] = useState([])
+
+
+    const getGalleyFromAPI = async () => {
+        await axios.get(api_url + 'gallery')
+        .then((res) => {
+            res.data.slice(0, 5).map((item, index) => {
+                let hasil =  ((index + 1) + 5) % 5;
+                let setCols;
+                let setColsMobile;
+                if(hasil === 1 || hasil === 2) {
+                    setCols = 1.5
+                    setColsMobile = 1.5
+                } else if(hasil === 3) {
+                        setCols = 1
+                        setColsMobile = 3
+                } else {
+                        setCols = 1
+                        setColsMobile = 1.5
+                }
+                setGallery((gallery) => [
+                    ...gallery, {
+                        img: item.image,
+                        title: item.file_name,
+                        cols: setCols,
+                        colsMobile: setColsMobile,
+                    }
+                ])
+            })
+        })
+    }
+
+    useEffect(() => {
+        getGalleyFromAPI()   
+    }, [])
+
     return (
         <Box
             bgcolor={green[50]}
@@ -60,7 +97,7 @@ function Gallery() {
 
                 <div className={classes.root}>
                     <ImageList rowHeight={200} gap={1} className={classes.imageList} cols={3}>
-                        {ItemData.map((item) => (
+                        {gallery.map((item) => (
                             <ImageListItem key={item.img} cols={matches ? item.colsMobile : item.cols} rows={rowsImage}>
                             {/* <ImageListItem key={item.img} cols={item.featured ? 2 : 1} rows={item.featured ? 2 : 1}> */}
                                 <img src={item.img} alt={item.title} />
