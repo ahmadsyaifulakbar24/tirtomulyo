@@ -6,12 +6,14 @@ import Content from './Content'
 import Gallery from './Gallery'
 import Invitation from './Invitation'
 import Packages from './Packages'
+import Reason from './Reason'
 
 function Home() {
     return (
         <Fragment>
             <CssBaseline />
             <Banner />
+            <Reason />
             <Packages />
             <Content />
             <Gallery />

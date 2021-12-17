@@ -42,7 +42,6 @@ const useStyle = makeStyles((theme) => ({
 
 function Banner2(props) {
     const classes = useStyle()
-    console.log(props.img)
     return (
         <Fragment>
             <Box 

@@ -9,6 +9,7 @@ import {
     Typography 
 } from '@material-ui/core'
 import React from 'react'
+import { contact_url } from '../../variable/BaseUrl';
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -38,7 +39,7 @@ function PackageComponent(props) {
                             gutterBottom
                             align="center"
                     >
-                        Paket A
+                        {props.data.title}
                     </Typography>
                     <Typography 
                         className={classes.price}
@@ -46,19 +47,17 @@ function PackageComponent(props) {
                         component="h2"
                         align="center"
                     >
-                        Rp. 140.000 
+                        {props.data.price}
                         <span className={classes.subPrice}>/orang</span>
                     </Typography>
                 </Box>
                 <Divider variant="middle" />
                 <Box sx={{ mt: 3 }}>
-                    asfalsdfl
-                    asdfklj
-                    kjslf
+                    <div dangerouslySetInnerHTML={{__html: props.data.content}} />;
                 </Box>
             </CardContent>
             <CardActions>
-                <Button fullWidth variant="contained" color="primary" size="large">
+                <Button fullWidth variant="contained" color="primary" size="large" href={contact_url}>
                     Pesan
                 </Button>
             </CardActions>

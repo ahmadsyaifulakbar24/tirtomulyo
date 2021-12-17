@@ -48,7 +48,12 @@ const useStyle = makeStyles((theme) => ({
         },
     },
     button: {
-        color: "white",
+        color: "#ffff",
+        textTransform: "none",
+        padding: theme.spacing(0, 4, 0, 4)
+    },
+    buttonDrawer: {
+        color: "#000",
         textTransform: "none",
         padding: theme.spacing(0, 4, 0, 4)
     },
@@ -84,8 +89,8 @@ const AppBarMenu = () => {
                     key={index}
                 >
                     <Button
-                         className = {`${classes.button} ${location.pathname === item.url ? classes.active : null}`}
-                         onClick={() => navigate(item.url)}
+                        className = {`${classes.buttonDrawer} ${location.pathname === item.url ? classes.active : null}`}
+                        onClick={() => navigate(item.url)}
                     >
                         <ListItemText >
                             {item.name}

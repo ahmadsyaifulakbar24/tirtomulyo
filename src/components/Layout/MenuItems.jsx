@@ -14,6 +14,10 @@ const MenuItems = [
     {
         name: 'Panduan Wisata',
         url: '/travel-guide'
+    },
+    {
+        name: 'Pemesanan',
+        url: '/booking'
     }
 ]
 
