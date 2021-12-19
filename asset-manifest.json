@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/tirtomulyo/static/css/main.c56e2457.chunk.css",
-    "main.js": "/tirtomulyo/static/js/main.8f5b958e.chunk.js",
-    "main.js.map": "/tirtomulyo/static/js/main.8f5b958e.chunk.js.map",
-    "runtime-main.js": "/tirtomulyo/static/js/runtime-main.96522b7f.js",
-    "runtime-main.js.map": "/tirtomulyo/static/js/runtime-main.96522b7f.js.map",
+    "main.css": "/tirtomulyo/static/css/main.9f65b0e8.chunk.css",
+    "main.js": "/tirtomulyo/static/js/main.56cc8af5.chunk.js",
+    "main.js.map": "/tirtomulyo/static/js/main.56cc8af5.chunk.js.map",
+    "runtime-main.js": "/tirtomulyo/static/js/runtime-main.31d22c81.js",
+    "runtime-main.js.map": "/tirtomulyo/static/js/runtime-main.31d22c81.js.map",
     "static/css/2.1f657cd4.chunk.css": "/tirtomulyo/static/css/2.1f657cd4.chunk.css",
-    "static/js/2.bd8a20e6.chunk.js": "/tirtomulyo/static/js/2.bd8a20e6.chunk.js",
-    "static/js/2.bd8a20e6.chunk.js.map": "/tirtomulyo/static/js/2.bd8a20e6.chunk.js.map",
-    "static/js/3.5abd64c8.chunk.js": "/tirtomulyo/static/js/3.5abd64c8.chunk.js",
-    "static/js/3.5abd64c8.chunk.js.map": "/tirtomulyo/static/js/3.5abd64c8.chunk.js.map",
+    "static/js/2.c94a66b0.chunk.js": "/tirtomulyo/static/js/2.c94a66b0.chunk.js",
+    "static/js/2.c94a66b0.chunk.js.map": "/tirtomulyo/static/js/2.c94a66b0.chunk.js.map",
+    "static/js/3.0dd4081a.chunk.js": "/tirtomulyo/static/js/3.0dd4081a.chunk.js",
+    "static/js/3.0dd4081a.chunk.js.map": "/tirtomulyo/static/js/3.0dd4081a.chunk.js.map",
     "index.html": "/tirtomulyo/index.html",
     "static/css/2.1f657cd4.chunk.css.map": "/tirtomulyo/static/css/2.1f657cd4.chunk.css.map",
-    "static/css/main.c56e2457.chunk.css.map": "/tirtomulyo/static/css/main.c56e2457.chunk.css.map",
-    "static/js/2.bd8a20e6.chunk.js.LICENSE.txt": "/tirtomulyo/static/js/2.bd8a20e6.chunk.js.LICENSE.txt",
+    "static/css/main.9f65b0e8.chunk.css.map": "/tirtomulyo/static/css/main.9f65b0e8.chunk.css.map",
+    "static/js/2.c94a66b0.chunk.js.LICENSE.txt": "/tirtomulyo/static/js/2.c94a66b0.chunk.js.LICENSE.txt",
     "static/media/slick-theme.css": "/tirtomulyo/static/media/slick.c94f7671.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.96522b7f.js",
+    "static/js/runtime-main.31d22c81.js",
     "static/css/2.1f657cd4.chunk.css",
-    "static/js/2.bd8a20e6.chunk.js",
-    "static/css/main.c56e2457.chunk.css",
-    "static/js/main.8f5b958e.chunk.js"
+    "static/js/2.c94a66b0.chunk.js",
+    "static/css/main.9f65b0e8.chunk.css",
+    "static/js/main.56cc8af5.chunk.js"
   ]
 }
