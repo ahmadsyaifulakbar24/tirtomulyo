@@ -2,6 +2,7 @@ import { Box, Button, Container, Typography } from '@material-ui/core'
 import { green } from '@material-ui/core/colors'
 import { makeStyles } from '@material-ui/styles'
 import React from 'react'
+import { contact_url } from '../../variable/BaseUrl'
 
 const useStyle = makeStyles((theme) => ({
     root: {
@@ -44,6 +45,7 @@ function Invitation() {
                         variant="contained" 
                         color="primary"
                         size="large"
+                        href={contact_url}
                     >
                         Klik Disini
                     </Button>

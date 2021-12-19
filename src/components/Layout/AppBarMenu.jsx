@@ -24,13 +24,12 @@ import { green } from "@material-ui/core/colors";
 
 const drawerWidth = 240;
 const useStyle = makeStyles((theme) => ({
-    root: {
+    grow: {
         flexGrow: 1,
     },
     logo : {
         color: "#fff",
         cursor: 'pointer',
-        flexGrow: 1
     },
     navLinks: {
         display: 'flex'
@@ -50,7 +49,7 @@ const useStyle = makeStyles((theme) => ({
     button: {
         color: "#ffff",
         textTransform: "none",
-        padding: theme.spacing(0, 4, 0, 4)
+        padding: theme.spacing(0, 4, 0, 4),
     },
     buttonDrawer: {
         color: "#000",
@@ -129,14 +128,14 @@ const AppBarMenu = () => {
 
     window.addEventListener('scroll', changeBackground)
     return (
-        <div className={classes.root}>
+        <div className={classes.grow}>
             <AppBar 
                 elevation="0"
                 position="fixed"
                 color={appBarBackground ? 'primary' : 'transparent'}
             >
                 <CssBaseline />
-                <Container>
+                <Container maxWidth="false">
                     <Toolbar disableGutters >
                         <IconButton
                             color="fff"
@@ -162,6 +161,13 @@ const AppBarMenu = () => {
                         >
                             {appBar}
                         </Hidden>
+                        <div className={classes.grow} />
+                        <Typography className={classes.button}>
+                            082174398682
+                        </Typography>
+                        <Typography className={classes.button}>
+                            desatirtomulyo@gmail.com
+                        </Typography>
                     </Toolbar>
                 </Container>
             </AppBar>
