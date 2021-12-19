@@ -162,12 +162,16 @@ const AppBarMenu = () => {
                             {appBar}
                         </Hidden>
                         <div className={classes.grow} />
-                        <Typography className={classes.button}>
-                            082174398682
-                        </Typography>
-                        <Typography className={classes.button}>
-                            desatirtomulyo@gmail.com
-                        </Typography>
+                        <Hidden
+                             xsDown
+                        >
+                            <Typography className={classes.button}>
+                                082174398682
+                            </Typography>
+                            <Typography className={classes.button}>
+                                desatirtomulyo@gmail.com
+                            </Typography>
+                        </Hidden>
                     </Toolbar>
                 </Container>
             </AppBar>
